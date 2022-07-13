@@ -28,7 +28,7 @@ real_world = GaussianMixture(
     var_init=var,
     covariance_type="diag")
 
-def visualize_gmm(gmm, n_samples=3000, samples=None, classes=None, show=True, **kde_kwargs):
+def visualize_gmm(gmm, n_samples=1000, samples=None, classes=None, show=True, **kde_kwargs):
     if samples is None:
         samples, classes = gmm.sample(n_samples)
 
