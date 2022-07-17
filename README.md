@@ -1,4 +1,4 @@
-#Welcome to misinfo sim! 
+# Welcome to misinfo sim! 
 
 This project is an attempt to create a simulation of how misinformation spreads on social media, with the end goal of making social media more robust to misinformation. 
 
