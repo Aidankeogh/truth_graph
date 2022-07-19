@@ -13,4 +13,4 @@ We will call regular people **agents**, and any people trying to mislead **misin
 Here is the high level structure of our sim
 ![Graphical overview](https://github.com/Aidankeogh/truth_graph/blob/master/misinfo-sim.png?raw=true)
 
-Check out my (sprint 1 devlog)[https://github.com/Aidankeogh/truth_graph/blob/master/sprint_1_wolf_forest.ipynb] to get started!
+Check out my [sprint 1 devlog](https://github.com/Aidankeogh/truth_graph/blob/master/sprint_1_wolf_forest.ipynb) to get started!
