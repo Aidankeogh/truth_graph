@@ -6,7 +6,7 @@ Our goal is to find social media structures that make it easier to spread good i
 
 The scope of this project is not just limited to political misinformation but rather attempts to mislead people online in general. One of the primary use cases being explored is as an ethical advertising platform. 
 
-This project uses a multi-agent reinforcement learning setup similar to salesforce's [AI economist](https://www.salesforce.com/news/stories/introducing-the-ai-economist-why-salesforce-researchers-are-applying-machine-learning-to-economics/), except instead of using tax policy to optimize productivity/equality, we will use levers inside of social media systems to optimize our agents' understanding of their environment.
+This project uses a [multi-agent reinforcement learning](https://en.wikipedia.org/wiki/Multi-agent_reinforcement_learning) setup similar to salesforce's [AI economist](https://www.salesforce.com/news/stories/introducing-the-ai-economist-why-salesforce-researchers-are-applying-machine-learning-to-economics/), except instead of using tax policy to optimize productivity/equality, we will use levers inside of social media systems to optimize our agents' understanding of their environment.
 
 For nomenclature, misinformation means any information given with the intent of misleading the listener. For instance, in games like [mafia, warewolf, or among-us](https://en.wikipedia.org/wiki/Mafia_(party_game)), information from other players is potential misinformation because they might be on the other team, trying to trick you into forming a false belief.
 
