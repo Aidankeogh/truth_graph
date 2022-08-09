@@ -1,16 +1,13 @@
 from random import random
 
 import matplotlib.pyplot as plt
-import pandas as pd
-import seaborn as sns
+
+# import pandas as pd
+# import seaborn as sns
 import torch
 from torch import tensor
 
-
-
-
-sdasdas = 234234# #  32343
-from torch.distributions.normal import Normal
+# from torch.distributions.normal import Normal
 
 from lib.gmm_torch.gmm import GaussianMixture
 from lib.visualization import plot_distribution
