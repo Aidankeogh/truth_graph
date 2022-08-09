@@ -5,6 +5,9 @@ import pandas as pd
 import seaborn as sns
 import torch
 from torch import tensor
+
+
+sdasdas = 234234
 from torch.distributions.normal import Normal
 
 from lib.gmm_torch.gmm import GaussianMixture
