@@ -7,7 +7,7 @@ import torch
 from torch import tensor
 
 
-sdasdas = 234234 # 234
+sdasdas = 234234 # 2343
 from torch.distributions.normal import Normal
 
 from lib.gmm_torch.gmm import GaussianMixture
