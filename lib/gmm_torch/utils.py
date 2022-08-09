@@ -1,5 +1,6 @@
 import torch
 
+
 def calculate_matmul_n_times(n_components, mat_a, mat_b):
     """
     Calculate matrix product of two matrics with mat_a[0] >= mat_b[0].
@@ -9,12 +10,12 @@ def calculate_matmul_n_times(n_components, mat_a, mat_b):
         mat_b:      torch.Tensor (1, k, d, d)
     """
     res = torch.zeros(mat_a.shape).to(mat_a.device)
-    
+
     for i in range(n_components):
         mat_a_i = mat_a[:, i, :, :].squeeze(-2)
         mat_b_i = mat_b[0, i, :, :].squeeze()
         res[:, i, :, :] = mat_a_i.mm(mat_b_i).unsqueeze(1)
-    
+
     return res
 
 
