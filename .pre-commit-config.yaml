@@ -9,3 +9,10 @@ repos:
     rev: 22.6.0
     hooks:
     -   id: black
+-   repo: local
+    hooks:
+    -   id: run-tests
+        name: run-tests
+        description: This hook runs my tests.
+        entry: python test_entrypoint.py
+        language: python
