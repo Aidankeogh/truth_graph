@@ -6,38 +6,8 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from matplotlib import ticker
-from third_party.gmm_torch.gmm import GaussianMixture
+from lib.gmm_torch.gmm import GaussianMixture
 import numpy as np
-
-mu = torch.tensor(
-    [[
-        [1, 1],
-        [-1, 1],
-        [0, -1],
-    ]]
-)
-var = torch.tensor(
-    [[
-        [0.3, 0.3],
-        [0.3, 0.4],
-        [0.5, 0.3],
-    ]]
-)
-pi = torch.tensor(
-    [[
-        [0.3],
-        [0.3],
-        [0.4],
-    ]]
-)
-
-wolf_dens = GaussianMixture(
-    n_components=3,
-    n_features=2,
-    mu_init=mu,
-    var_init=var,
-    pi_init=pi,
-    covariance_type="diag")
 
 def visualize_gmm(gmm, n_samples=1000, samples=None, classes=None, show=True, scatter=False, **kde_kwargs):
     if samples is None:
@@ -53,29 +23,6 @@ def visualize_gmm(gmm, n_samples=1000, samples=None, classes=None, show=True, sc
         sns.scatterplot(data=sample_df, x="x", y="y")
     if show:
         plt.show()
-
-from matplotlib.patches import Ellipse
-
-def draw_ellipse(position, covariance, ax=None, **kwargs):
-    """Draw an ellipse with a given position and covariance"""
-    ax = ax or plt.gca()
-    
-
-    angle = 0
-    width, height = 2 * np.sqrt(covariance.cpu().numpy())
-    
-    # Draw the Ellipse
-    for nsig in range(1, 4):
-        ax.add_patch(Ellipse(position, nsig * width, nsig * height,
-                             angle, **kwargs))
-        
-# def plot_gmm(gmm, ax=None, **kwargs):
-#     ax = ax or plt.gca()
-#     ax.axis('equal')
-    
-#     w_factor = 0.2 / gmm.pi.max()
-#     for pos, covar, w in zip(gmm.mu[0], gmm.var[0], gmm.pi[0]):
-#         draw_ellipse(pos, covar, alpha=(w * w_factor).item(), **kwargs)
 
 def plot_distribution(distribution, xrange=[-2, 2], yrange=[-2, 2], dots=100, plot_type="contour", ax=None, cbar=True, title=None, **kwargs):
     if ax is None:
@@ -106,6 +53,35 @@ def plot_distribution(distribution, xrange=[-2, 2], yrange=[-2, 2], dots=100, pl
         ax.set_title(title)
 
 if __name__ == "__main__":
+    mu = torch.tensor(
+        [[
+            [1, 1],
+            [-1, 1],
+            [0, -1],
+        ]]
+    )
+    var = torch.tensor(
+        [[
+            [0.3, 0.3],
+            [0.3, 0.4],
+            [0.5, 0.3],
+        ]]
+    )
+    pi = torch.tensor(
+        [[
+            [0.3],
+            [0.3],
+            [0.4],
+        ]]
+    )
+
+    wolf_dens = GaussianMixture(
+        n_components=3,
+        n_features=2,
+        mu_init=mu,
+        var_init=var,
+        pi_init=pi,
+        covariance_type="diag")
 
     fig, axs = plt.subplots(1, 2)
     plot_distribution(wolf_dens, ax=axs[0], title=False, cbar=False)
