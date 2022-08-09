@@ -1,0 +1,6 @@
+-   id: run-tests
+    name: run-tests
+    description: This hook runs my tests.
+    entry: test_entrypoint.py
+    language: python
+    types: [text]
