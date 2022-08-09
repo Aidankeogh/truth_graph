@@ -2,12 +2,8 @@ from random import random
 
 import matplotlib.pyplot as plt
 
-# import pandas as pd
-# import seaborn as sns
 import torch
 from torch import tensor
-
-# from torch.distributions.normal import Normal
 
 from lib.gmm_torch.gmm import GaussianMixture
 from lib.visualization import plot_distribution
