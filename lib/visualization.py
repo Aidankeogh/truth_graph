@@ -8,8 +8,6 @@ from pyrsistent import l
 from torch import tensor
 from torch.distributions.normal import Normal
 
-from lib.gmm_torch.gmm import GaussianMixture
-
 
 def visualize_gmm(
     gmm,
@@ -71,6 +69,8 @@ def plot_distribution(
 
 
 if __name__ == "__main__":
+    from models.gmm_torch.gmm import GaussianMixture
+
     mu = torch.tensor(
         [
             [

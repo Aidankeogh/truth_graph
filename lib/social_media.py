@@ -1,0 +1,2 @@
+class SimpleMessageBoard:
+    pass

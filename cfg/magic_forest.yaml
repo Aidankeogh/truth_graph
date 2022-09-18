@@ -1,0 +1,37 @@
+samples_per_step: 100
+environment: &model_cfg
+    fox:
+        n: 3
+        dist: &standard_dist  # Every "spawn point" gaussian will fall between [-2, -2] and [2, 2] (uniform across a 4x4 box)
+          mean:
+              type: uniform
+              min: [-2, -2]
+              max: [2, 2]
+          var:
+              type: uniform
+              min: [0.05, 0.05]
+              max: [0.3, 0.3]
+          pi:
+              type: uniform
+              min: 0
+              max: 1
+    wolf:
+        n: 4
+        dist: *standard_dist
+    fairie:
+        n: 2
+        dist: *standard_dist
+    dragon:
+        n: 2
+        dist: *standard_dist
+    turtle:
+        n: 1
+        dist: *standard_dist
+agents:
+    n_agents: 4
+    model: *model_cfg
+    location:
+        type: uniform
+        min: [-2, -2]
+        max: [2, 2]
+    agent_names: []
