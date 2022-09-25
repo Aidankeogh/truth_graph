@@ -143,3 +143,6 @@ class GMM:
                 "pi": self.pis[0, :, 0],
             }
         )
+
+    def loglikelihood(self, data: torch.tensor):
+        return self.gmm._score(data)

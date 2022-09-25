@@ -50,7 +50,10 @@ def plot_distribution(
     y = torch.linspace(yrange[0], yrange[1], dots)
     xx, yy = torch.meshgrid(x, y, indexing="xy")
     tsr = torch.stack([xx.flatten(), yy.flatten()], axis=1)
-    z = torch.exp(distribution.score_samples(tsr))
+    scores = distribution.score_samples(tsr)
+    if type(scores) is not torch.Tensor:
+        scores = torch.tensor(scores)
+    z = torch.exp(scores)
 
     zz = z.reshape(xx.shape)
     if plot_type == "contour":
